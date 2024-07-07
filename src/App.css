@@ -1,0 +1,15 @@
+.line-through {
+	text-decoration: line-through;
+  }
+  .df{
+	display: flex;
+  }
+  .mb-20{
+	margin-bottom: 20px;
+  }
+  .aic{
+	align-items: center;
+  }
+  .gap-4{
+	gap: 2rem;
+  }
