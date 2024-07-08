@@ -13,3 +13,34 @@
   .gap-4{
 	gap: 2rem;
   }
+  .bb2{
+	border-bottom: 2px solid grey;
+  }
+  .p2{
+	padding: 2em;
+  }
+  .container{
+	margin: 0 auto;
+	max-width: 1200px;
+  }
+  .jcsb{
+	justify-content: space-between;
+  }
+  .aic{
+	align-items: center;
+  }
+  .fs24{
+	font-size: 24px;
+  }
+.todo-item{
+	padding: 20px;
+	font-size: 24px;
+}
+.checkbox{
+	width: 24px;
+	height: 24px;
+}
+.ant-checkbox-inner{
+	width: 24px !important;
+	height: 24px !important;
+}

@@ -19,25 +19,34 @@ export const TodoList = memo(({ filterTodos, status }: propsType): ReactElement=
 	}
 	const leftTodos = useAppSelector(state=>state.todos.todos).filter(t=>!t.completed).length
 	return (
-		<div>
+		<div className=''>
 			{
 				todos1.map(todo => {
 					return <TodoItem key={todo.id} {...todo} />
 				})
 			}
-			<Button onClick={() => filterTodos("all")} style={{backgroundColor:`${status==="all"?"#E6F7FF":"white"}`}}>
-				all
-			</Button>
-			<Button onClick={() => filterTodos("completed")} style={{backgroundColor:`${status==="completed"?"#E6F7FF":"white"}`}}>
-				completed
-			</Button>
-			<Button onClick={() => filterTodos("active")} style={{backgroundColor:`${status==="active"?"#E6F7FF":"white"}`}}>
-				active
-			</Button>
-			<Button onClick={clearCompleted}>
-				clear completed
-			</Button>
-			{leftTodos} left
+			<div className='df jcsb aic'>
+				<div className='fs24'>
+					{leftTodos} left
+				</div>
+				<div className='df gap-4'>
+					<Button onClick={() => filterTodos("all")} style={{backgroundColor:`${status==="all"?"#E6F7FF":"white"}`}}>
+						all
+					</Button>
+					<Button onClick={() => filterTodos("completed")} style={{backgroundColor:`${status==="completed"?"#E6F7FF":"white"}`}}>
+						completed
+					</Button>
+					<Button onClick={() => filterTodos("active")} style={{backgroundColor:`${status==="active"?"#E6F7FF":"white"}`}}>
+						active
+					</Button>
+				</div>
+				<div>
+					<Button onClick={clearCompleted}>
+						clear completed
+					</Button>
+				</div>
+
+			</div>
 		</div>
 	)
 })

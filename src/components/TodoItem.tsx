@@ -17,10 +17,11 @@ export const TodoItem = memo(({title, completed, id}:{title:string, completed:bo
 		dispatch(deleteTodoItem(id))
 	}
   return (
-	<div className='df mb-20 aic gap-4'>
+	<div className='df mb-20 aic gap-4 bb1 todo-item'>
 		<Checkbox
 			onChange={changeStatusTodo}
 			checked={completed}
+			className='checkbox'
 		/>
 		<div className={`${completed ? "line-through" : ""}`}>
 			{title}

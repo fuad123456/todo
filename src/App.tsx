@@ -12,12 +12,14 @@ export default function App() {
 	const dispatch = useAppDispatch();
 	const [status, setStatus] = useState<FilterType>("all")
 	function addTodo(): void {
-		dispatch(addTodoItem({
-			id:uuidv4(),
-			title:value,
-			completed:false
-		}))
-		setValue("")
+		if(value.trim().length !==0){
+			dispatch(addTodoItem({
+				id:uuidv4(),
+				title:value,
+				completed:false
+			}))
+			setValue("")
+		}
 	}
 
 	const filterTodos = useCallback((status:FilterType)=>{
@@ -26,15 +28,19 @@ export default function App() {
 	return (
 		<div className='container'>
 			<h1>Todos</h1>
-			<Input
-				onChange={(e) => {setValue(e.target.value)}}
-				onKeyDown={(e) => {
-					if (e.key === "Enter") {
-						addTodo()
-					}
-				}}
-				value={value}
-			/>
+			<div className='bb2 p2 mb-20'>
+				<Input
+					onChange={(e) => {setValue(e.target.value)}}
+					onKeyDown={(e) => {
+						if (e.key === "Enter") {
+							addTodo()
+						}
+					}}
+					size='large'
+					value={value}
+					placeholder='What need to be done'
+				/>
+			</div>
 			<TodoList filterTodos={filterTodos} status={status}/>
 		</div>
 	)
